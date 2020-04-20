@@ -11,6 +11,10 @@
     align-content: center;
 }
 
+li{
+    list-style: none;
+}
+
  .heading{
      text-align: center;
      padding-top: 5%;

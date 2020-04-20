@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="style.css">
 <!--Import for Google Font-->
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300&display=swap" rel="stylesheet">
+<!-- Knockout script s-->
+<script src="knockout-v3.5.1.js"></script>
 
     <title>Java Script Trivia</title>
   </head>
@@ -21,7 +23,7 @@
     <div class="container" id="buttonContainer">
         <row class="align-items-center justify-content-center hide">
             <div class="col">
-                    <button class="btn btn-success btn-lg start" id="startButton">Start Survey</button>
+                    <button class="btn btn-outline-success btn-lg start" id="startButton">Start Survey</button>
           </div>
         </row>
       </div>
@@ -37,15 +39,14 @@
 <!--Question 1-->
   <div class="carousel-item active">
     <h3 class="display-4">Question #1</h3>
-    <h5>What does console.log() do?</h5>
+    <h5 id="question1">What does console.log() do?</h5>
     <form>
         <div class="form-group form">
             <div class="form-check">
               <ul class="list-group">
                 <li class="list-group-item">
                   <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios1" value="option1" checked>
-                  <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios1-1">
-                    Outputs a message to the web console.
+                  <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios1-1" value="Outputs a message to the web console.">Outputs a message to the web console.
                   </label>
                   <br>
                 </li>
@@ -72,7 +73,7 @@
 <!--Question 2-->
   <div class="carousel-item">
     <h3 class="display-4">Question #2</h3>
-    <h5>What is the proper Syntax for a For Loop?</h5>
+    <h5 id="question2">What is the proper Syntax for a For Loop?</h5>
     <form>
         <div class="form-group">
             <div class="form-check">
@@ -87,8 +88,7 @@
                 </li>
                 <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios2-2" value="option2">
-                <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios2-2">
-                  for (i = 0; i < array.length; i++) {
+                <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios2-2-2">for (i = 0; i < array.length; i++) {
                     console.log(array[i]);
                   }
                 </label>
@@ -110,7 +110,7 @@
 <!--Question 3-->
   <div class="carousel-item">
     <h3 class="display-4">Question #3</h3>
-    <h5>Function(x,y){}, what is the name for the items within the parenthesis?</h5>
+    <h5 id="question3">Function(x,y){}, what is the name for the items within the parenthesis?</h5>
     <form>
         <div class="form-group">
             <div class="form-check">
@@ -123,8 +123,7 @@
                 </li>
                 <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios3-2" value="option2">
-                <label class="form-check-label" for="jsQuizRadios1">
-                  Parameters
+                <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios3-2-2">Parameters
                 </label>
                 <br>
                 </li>
@@ -142,7 +141,7 @@
 <!--Question 4-->
   <div class="carousel-item">
     <h3 class="display-4">Question #4</h3>
-    <h5>What is the proper declaration for a variable?</h5>
+    <h5 id="question4">What is the proper declaration for a variable?</h5>
     <form>
         <div class="form-group">
             <div class="form-check">
@@ -162,8 +161,7 @@
               </li>
               <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios4-3" value="option3">
-                <label class="form-check-label" for="jsQuizRadios1">
-                  var myVar = value
+                <label class="form-check-label" id="jsQuizRadios4-3-3" for="jsQuizRadios1">var myVar = value
                 </label>
                 </li>
               </div>
@@ -174,7 +172,7 @@
   <!--Question 5-->
   <div class="carousel-item">
     <h3 class="display-4">Question #5</h3>
-    <h5>What is the syntax for multiline comments in JavaScript?</h5>
+    <h5 id="question5">What is the syntax for multiline comments in JavaScript?</h5>
     <form>
         <div class="form-group">
             <div class="form-check">
@@ -187,8 +185,7 @@
                 </li>
                 <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios5-2" value="option2">
-                <label class="form-check-label" for="jsQuizRadios1">
-                  /* comment */
+                <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios5-2-2">/* comment */
                 </label>
                 <br>
                 </li>
@@ -206,14 +203,13 @@
 <!--Question 6-->
   <div class="carousel-item">
     <h3 class="display-4">Question #6</h3>
-    <h5>Which would display the third item in the array?</h5>
+    <h5 id="question6">Which would display the third item in the array?</h5>
     <form>
         <div class="form-group">
             <div class="form-check">
               <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios6-1" value="option1">
-                <label class="form-check-label" for="jsQuizRadios1">
-                  console.log(array[2]);
+                <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios6-1-1">console.log(array[2]);
                 </label>
                 <br>
                 </li>
@@ -238,14 +234,13 @@
 <!--Question 7-->
   <div class="carousel-item">
     <h3 class="display-4">Question #7</h3>
-    <h5>JavaScript is a single threaded language?</h5>
+    <h5 id="question7">JavaScript is a single threaded language?</h5>
     <form>
         <div class="form-group">
             <div class="form-check">
               <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios7-1" value="option1">
-                <label class="form-check-label" for="jsQuizRadios1">
-                  True
+                <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios7-1-1">True
                 </label>
                 <br>
                 </li>
@@ -264,14 +259,13 @@
 <!--Question 8-->
   <div class="carousel-item">
     <h3 class="display-4">Question #8</h3>
-    <h5>What is the proper syntax to display multiple values with console.log()?</h5>
+    <h5 id="question8">What is the proper syntax to display multiple values with console.log()?</h5>
     <form>
         <div class="form-group">
             <div class="form-check">
               <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios8-1" value="option1">
-                <label class="form-check-label" for="jsQuizRadios1">
-                  console.log(value1 + value2);
+                <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios8-1-1">console.log(value1 + value2);
                 </label>
                 <br>
                 </li>
@@ -296,14 +290,13 @@
 <!--Question 9-->
   <div class="carousel-item">
     <h3 class="display-4">Question #9</h3>
-    <h5>What is an array?</h5>
+    <h5 id="question9">What is an array?</h5>
     <form>
         <div class="form-group">
             <div class="form-check">
               <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios9-1" value="option1">
-                <label class="form-check-label" for="jsQuizRadios1">
-                  A set of values stored within a single variable.
+                <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios9-1-1">A set of values stored within a single variable.
                 </label>
                 <br>
                 </li>
@@ -328,7 +321,7 @@
 <!--Question 10-->
   <div class="carousel-item">
     <h3 class="display-4">Question #10</h3>
-    <h5>What does the pop() method do in arrays?</h5>
+    <h5 id="question10">What does the pop() method do in arrays?</h5>
     <form>
         <div class="form-group">
             <div class="form-check">
@@ -348,8 +341,7 @@
                 </li>
                 <li class="list-group-item">
                 <input class="form-check-input" type="radio" name="jsQuizRadios" id="jsQuizRadios10-3" value="option3">
-                <label class="form-check-label" for="jsQuizRadios1">
-                  Removes the last element of the array.
+                <label class="form-check-label" for="jsQuizRadios1" id="jsQuizRadios10-3-3" >Removes the last element of the array.
                 </label>
                 </li>
               </div>
@@ -360,12 +352,16 @@
 
 <!--Results Page-->
                           <div class="carousel-item">
+                          <ul class="list-group">
                             <li class="list-group-item">
                             <h3 class="display-4 results">Results</h3>
                             <p id="totalCorrect" value="0"></p>
+                            <p id="finalResults"></p><br><br>
+                            <p id="summary"></p>
                             <button class="btn btn-success" id="retryButton">Retry</button>
-                            <button class="btn btn-success">Share Results</button>
+      <button class="btn btn-success" id="summaryButton" data-bind="click: myFunction">View Correct Answers</button>
                             </li>
+                            </ul>
                           </div>
                         </div>
                   </div>
@@ -375,39 +371,116 @@
       <div class="justify-content-center">
 
         <button type="button" class="pr-3 btn btn-success btn-lg" id="previousQuestionButton">Previous Question</button>
-      <a class="left carousel-control" id="prev" href="#myCarousel" role="button">
+      <a class="left carousel-control" id="prev" href="#myCarousel" role="button" data-bind="progressForward">
         <span aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
 
       <button type="button" id="nextQuestionButton" class="btn btn-success btn-lg">Next Question</button><br><br>
-      <a class="right carousel-control" href="#myCarousel" role="button" id="next">
+      <a class="right carousel-control" href="#myCarousel" role="button" id="next" data-bind="progressBackward">
         <span aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
       </div>
     </div>
-     
+
       <div class="progress">
         <div class="progress-bar bg-success" id="progressBar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
           </div>
         </row>
       </div>
+
+      
       </main>
       <footer style="color: white; text-align: center;">
         Created by Team Simple.io
-      </footer>
+    </footer>
 
+
+
+   
 <!--Scripts to control various flows-->
 <script>
   $(document).ready(function(){
+
+    var viewModel = {
+        myFunction: function(data, event) {
+             //get html values for each correct answer and store them in a new array
+      
+      //print the array to the element  
+      correctAnswersText = [
+      "jsQuizRadios1-1",
+      "jsQuizRadios2-2-2",
+      "jsQuizRadios3-2-2",
+      "jsQuizRadios4-3-3",
+      "jsQuizRadios5-2-2",
+      "jsQuizRadios6-1-1",
+      "jsQuizRadios7-1-1",
+      "jsQuizRadios8-1-1",
+      "jsQuizRadios9-1-1",
+      "jsQuizRadios10-3-3"
+      ];
+      //questions
+      var questions = [
+        "question1",
+        "question2",
+        "question3",
+        "question4",
+        "question5",
+        "question6",
+        "question7",
+        "question8",
+        "question9",
+        "question10"
+      ];
+
+      //set empty array, so we have a place to store questions and answers in as an object
+      var qAndA = [];
+
+      //loop to get questions answers and set them in an object
+      for (var i = 0; i < questions.length; i++) {
+        var obj = {
+          //get and set question
+          question: document.getElementById(questions[i]).innerHTML
+        }; 
+        for(var j=0; j< correctAnswersText.length; j++){
+          //get and set answers
+          obj.answer = document.getElementById(correctAnswersText[i]).innerHTML;
+        }
+        //push questions and answers from above processing into aAndA object
+        qAndA.push(obj);
+
+        }
+
+        //display the correct answers and questions to the ui
+        qAndA.forEach(function(item){
+          console.log(`Question: ${item.question}\nAnswer: ${item.answer}`);
+          //$("#summary").html(`Question: ${item.question}\n<br />Answer: ${item.answer}`);
+          document.getElementById("summary").innerHTML += "<li>" + "Question:<br/><strong>" + item.question + "</strong><br>" +
+          "Answer:<br><strong>" + item.answer + "</strong></li><br><br>";
+        });
+
+        //hide the show answers button
+        $( "#summaryButton" ).toggle();
+        }
+    };
+    ko.applyBindings(viewModel);       
+
     
-/**VIEW CONTROLLER**/
+    //initialize checks for forward/back buttons on ready
+    checkForLastButton(progress);
+    handlePreviousButton(progress);
+
+
+
+
+
+/**Model for handling navigation through app**/
     $( "#startButton" ).click(function() {
         //hide the start button
         $( "#startButton" ).toggle();
-
+        
         //hide the heading
         $("#headingTest").toggle();
 
@@ -419,30 +492,40 @@
       
         // Go to the Next Question
         $("#nextQuestionButton").click(function(){
+        
+        //initialize scoring
+        calcResults(correctAnswers);
 
-          calcResults(correctAnswers);
-          $("#myCarousel").carousel("next");
-
-        // Go to the Previous Question
-        $("#previousQuestionButton").click(function(){
-          $("#myCarousel").carousel("prev");
-        });
-
+        $("#myCarousel").carousel("next");
+        
         //call add progress function to update progress bar
         addProgress();
-
+        
+        handlePreviousButton(progress);
         //see if last question has been reached. Passing progress in as a param.
         checkForLastButton(progress);
+        
     });
   });
+
+   // Go to the Previous Question
+   $("#previousQuestionButton").click(function(){
+          $("#myCarousel").carousel("prev");
+          removeProgress();
+          //check to see if we are at first question
+        checkForLastButton(progress);
+        });
   
   $( "#retryButton" ).click(function() {
     //TODO:
     location.reload();
   });
 
-/****MODEL***/
 
+
+
+
+/****MODEL for keeping track of questions***/
     //variable declaration 
     var progress, correctAnswers;
 
@@ -465,12 +548,51 @@
 
     //function to manage progress bar. We have 10 questions, so we'll increment by 1 or 10%. 
     function addProgress(){
-      progress = progress + 10;      
+      progress += 10;      
+      var elem = document.getElementById("progressBar"); 
+      elem.style.width = progress + "%"; 
+    }
+
+    //function to remove progress, if previous question button was clicked
+    function removeProgress(){
+      progress -= 10;      
       var elem = document.getElementById("progressBar"); 
       elem.style.width = progress + "%"; 
     }
   });
+
+    //function to see if next button was clicked on slide 9, so we can update button text to reflect "submit", instead of next question.
+  //passing progress in as a point to measure off of.
+  function checkForLastButton(progress){
+      if (progress === 100){
+        //change button text
+        $("#nextQuestionButton").html("See Results");
+
+  // handle display for final redsults page. get total and all the good stuff the user would want to know.
+      }else if (progress > 100){
+        //TODO: disable further forward and backward clicks
+        $("#nextQuestionButton").toggle();
+        $("#previousQuestionButton").hide();
+        //TODO: hide progress bar
+        $("#progressBar").toggle();
+      }
+    }
+
+    function handlePreviousButton(progress){
+      //set it hidden when progress is undefined or less than 10
+      if (progress === undefined || progress === 10){
+        $("#previousQuestionButton").hide();
+      }else if(progress > 10){
+        $("#previousQuestionButton").show();
+      }
+    }
   
+
+  /***
+  *
+  *Function to keep track of score
+  *
+  */
   //function to calculate the results. passing in the correctAnswer array and compare it to what
   //is selected in the ui.
     function calcResults(correctAnswers){
@@ -480,36 +602,40 @@
         var result = document.getElementById(correctAnswers[i]).checked;
         if (result){
           totalCorrect ++; 
-          console.log(totalCorrect);
-          $("#totalCorrect").html(`Your final score is:\n<br>${totalCorrect}/10`);
-       
+          //console.log(totalCorrect);
+          var finalScore = (totalCorrect*10)/1; 
+          $("#totalCorrect").html(`<strong>Final Score:</strong><br />${finalScore}%`);
+          
+          //call ranking with total correct
+          ranking(totalCorrect);
+
         }
       }
     }
 
-  //function to see if next button was clicked on slide 9, so we can update button text to reflect "submit", instead of next question.
-  //passing progress in as a point to measure off of.
-    function checkForLastButton(progress){
-      if (progress === 100){
-        //change button text
-        $("#nextQuestionButton").html("See Results");
+  
+  /*
+  *Model to rank user score
+  */
 
-  // handle display for final redsults page. get total and all the good stuff the user would want to know.
-      }else if(progress > 100){
-        //TODO: disable further forward clicks
-        $("#nextQuestionButton").toggle();
 
-        //TODO: hide progress bar
-        $("#progressBar").toggle();
-
-      }
+    function ranking(finalScore){
+      switch (true){
+        case finalScore >= 9 :
+          $("#finalResults").html(`<strong>Rank:</strong><br /> Expert:\n Wow! You really know your stuff!`);
+          break;
+        case finalScore < 9 && finalScore >= 6 :
+          $("#finalResults").html(`<strong>Rank:</strong><br />  Novice:\n You are doing great, but try again to keep learning!`);
+          break;
+        default:
+          $("#finalResults").html(`<strong>Rank:</strong><br />  Beginner:\n Don't give up, keep trying!`);
+    }
     }
 
-    //TODO optional: implement some type of validation that checks to ensure user is selecting options
-    function validateInputs(){
 
-    }
   </script>
+
+  
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
